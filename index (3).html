@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHRI GUNA FOODS - Premium Homemade Foods</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #a80065;
+            --secondary: #deed10;
+            --accent: #f39c12;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --success: #27ae60;
+            --text: #333;
+            --cream: #fff9f0;
+            --spice: #c0392b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+        }
+
+        .header-scrolled {
+            padding: 0.5rem 0;
+            background: rgba(211, 84, 0, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            height: 70px;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 5px 10px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            animation: bounce 1s;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://media.istockphoto.com/id/183803376/photo/mixed-nuts-and-dried-fruits.jpg?s=612x612&w=0&k=20&c=C7BlDHRlNQMTCMrAWcCg59PaA18bAuGXVcU0estWhGY=');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 8rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23f39c12' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            animation: float 20s infinite linear;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1.5s ease;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Styles */
+        .section-title {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            color: var(--dark);
+            position: relative;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto;
+            border-radius: 2px;
+            animation: expandWidth 1.5s ease;
+        }
+
+        /* Products Section */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 5rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            animation: slideUp 0.5s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.05));
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 1;
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .product-desc {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .product-price::before {
+            content: '₹';
+            font-size: 1rem;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 12px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .add-to-cart:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(211, 84, 0, 0.3);
+        }
+
+        .add-to-cart:active {
+            transform: translateY(0);
+        }
+
+        /* Cart Modal */
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .cart-content {
+            background: white;
+            width: 90%;
+            max-width: 700px;
+            border-radius: 15px;
+            padding: 25px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: modalSlideIn 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #777;
+            transition: color 0.3s;
+        }
+
+        .close-cart:hover {
+            color: var(--primary);
+        }
+
+        .cart-items {
+            margin-bottom: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            animation: slideInRight 0.3s ease;
+        }
+
+        .item-details {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex: 1;
+        }
+
+        .item-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .item-price {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+        }
+
+        .quantity-btn {
+            background: #f5f5f5;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s;
+            font-weight: bold;
+        }
+
+        .quantity-btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .remove-item {
+            color: #e74c3c;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.3rem;
+            transition: transform 0.2s;
+        }
+
+        .remove-item:hover {
+            transform: scale(1.2);
+        }
+
+        .cart-total {
+            text-align: right;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 25px 0;
+            color: var(--dark);
+            padding-top: 15px;
+            border-top: 2px solid #eee;
+        }
+
+        .buy-now-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--success);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .buy-now-btn:hover {
+            background: #219653;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            transform: rotate(-2deg);
+            transition: transform 0.5s;
+        }
+
+        .about-img:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background: var(--cream);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .testimonial-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .testimonial-slide.active {
+            opacity: 1;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-text::before,
+        .testimonial-text::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent);
+            position: absolute;
+            opacity: 0.3;
+        }
+
+        .testimonial-text::before {
+            top: -20px;
+            left: -30px;
+        }
+
+        .testimonial-text::after {
+            bottom: -40px;
+            right: -30px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 50px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            z-index: 999;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--cream);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .spinner {
+            width: 70px;
+            height: 70px;
+            border: 5px solid rgb(84, 3, 64);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s linear infinite;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(243, 156, 18, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(243, 156, 18, 0); }
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(1.1); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes modalSlideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(30px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 100px; }
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, 20px) rotate(180deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1001;
+            animation: slideInRight 0.3s ease;
+            max-width: 300px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-img {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 6rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .products {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .logo-img {
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .cart-content {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .item-details {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .item-quantity {
+                align-self: flex-end;
+            }
+            
+            .remove-item {
+                align-self: flex-end;
+            }
+            
+            .logo-img {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="ChatGPT Image Nov 20, 2025, 10_01_58 PM.png" alt="SHRI GUNA FOODS" class="logo-img">
+                    <div class="logo-text">SHRI GUNA FOODS-AKKIREDDYPALEM</div>
+                    
+                    
+                    
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li class="cart-icon" id="cartIcon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Authentic Homemade Foods</h1>
+                <p>Experience the rich flavors of traditional Indian snacks made with love and the finest ingredients. SHRI GUNA FOODS brings you authentic recipes passed down through generations.</p>
+                <a href="#products" class="btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="products">
+        <h2 class="section-title">Our Premium Foods</h2>
+        <div class="products">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="p1.jpg" alt="Bellam Gavvalu" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Bellam Gavvalu</h3>
+                    <p class="product-desc">Traditional sweet shell-shaped treats made with rice flour and jaggery, offering a delightful crunch and natural sweetness.</p>
+                    <div class="product-price">130.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="1" data-name="Bellam Gavvalu" data-price="130" data-img="p1.jpg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="p2.jpg" alt="Kajji Kayalu" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Kajji Kayalu</h3>
+                    <p class="product-desc">Crispy, savory diamond-shaped snacks made with rice flour and spices, perfect for tea time or festive occasions.</p>
+                    <div class="product-price">200.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="2" data-name="Kajji Kayalu" data-price="200" data-img="p2.jpg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="p3.jpeg" alt="Ariselu" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Ariselu</h3>
+                    <p class="product-desc">Traditional sweet rice flour discs cooked with jaggery, a festive delicacy with a perfect balance of sweetness and texture.</p>
+                    <div class="product-price">140.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="3" data-name="Ariselu" data-price="140" data-img="p3.jpeg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="p4.jpg" alt="Bellam Chalimidi" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Bellam Chalimidi</h3>
+                    <p class="product-desc">A traditional sweet made from rice flour and jaggery, often prepared for festivals and special occasions.</p>
+                    <div class="product-price">120.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="4" data-name="Bellam Chalimidi" data-price="120" data-img="p4.jpg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="p5.jpg" alt="Dry fruit Laddu" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Dry fruit Laddu</h3>
+                    <p class="product-desc">Nutrient-rich energy balls made with assorted dry fruits, nuts, and natural sweeteners for a healthy indulgence.</p>
+                    <div class="product-price">180.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="5" data-name="Dry fruit Laddu" data-price="180" data-img="p5.jpg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="p6.jpeg" alt="Atukulu Mixture" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Atukulu Mixture</h3>
+                    <p class="product-desc">A savory snack mix featuring flattened rice combined with peanuts, spices, and crunchy elements for a satisfying bite.</p>
+                    <div class="product-price">110.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="6" data-name="Atukulu Mixture" data-price="110" data-img="p6.jpeg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="product-card">
+                <img src="p7.jpeg" alt="Kajju Masala" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Kajju Masala</h3>
+                    <p class="product-desc">Cashews roasted with aromatic spices creating a flavorful and crunchy snack perfect for any time of day.</p>
+                    <div class="product-price">250.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="7" data-name="Kajju Masala" data-price="250" data-img="p7.jpeg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="product-card">
+                <img src="p8.jpg" alt="Mixture" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Mixture</h3>
+                    <p class="product-desc">A classic South Indian savory mix with lentils, peanuts, and spices offering a perfect balance of flavors and textures.</p>
+                    <div class="product-price">120.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="8" data-name="Mixture" data-price="120" data-img="p8.jpg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 9 -->
+            <div class="product-card">
+                <img src="p9.jpg" alt="Saggu Biyyam Chekkalu" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Saggu Biyyam Chekkalu</h3>
+                    <p class="product-desc">Crispy rice flour crackers seasoned with traditional spices, offering a delightful crunch with every bite.</p>
+                    <div class="product-price">110.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="9" data-name="Saggu Biyyam Chekkalu" data-price="110" data-img="p9.jpg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 10 -->
+            <div class="product-card">
+                <img src="p10.jpg" alt="Palli Pakodi" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Palli Pakodi(Peanut)</h3>
+                    <p class="product-desc">Crispy peanut fritters made with besan flour and spices, a perfect tea-time snack with a nutty flavor.</p>
+                    <div class="product-price">100.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="10" data-name="Palli Pakodi" data-price="100" data-img="p10.jpg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product 11 -->
+            <div class="product-card">
+                <img src="p11.jpg" alt="Murukulu" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Murukulu (Janthikulu)</h3>
+                    <p class="product-desc">Spiral-shaped savory snacks made from rice and lentil flour, seasoned with cumin and sesame seeds for a classic taste.</p>
+                    <div class="product-price">110.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="11" data-name="Murukulu" data-price="110" data-img="p11.jpg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+            <!-- Product 12 -->
+            <div class="product-card">
+                <img src="p12.jpeg" alt="Karapusa" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-title">Karapusa</h3>
+                    <p class="product-desc">Experience the signature feather-light crunch of Karapusa, delivering a bold explosion of spicy and savory flavors in every handful.</p>
+                    <div class="product-price">100.00<span>/250g</span></div>
+                    <button class="add-to-cart" data-id="12" data-name="Karapusa" data-price="100" data-img="p12.jpeg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose SHRI GUNA FOODS</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="feature-title">100% Natural</h3>
+                    <p>All our products are made with natural ingredients, free from artificial preservatives.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 class="feature-title">Traditional Recipes</h3>
+                    <p>Authentic recipes passed down through generations for that traditional taste.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="feature-title">Premium Quality</h3>
+                    <p>We use only the finest ingredients to ensure top quality in every product.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="feature-title">Fast Delivery</h3>
+                    <p>Quick and reliable delivery to your doorstep with secure packaging.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About SHRI GUNA FOODS</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="ChatGPT Image Nov 20, 2025, 10_01_58 PM.png" alt="About Us">
+                </div>
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>SHRI GUNA FOODS was founded with a passion for preserving the authentic flavors of traditional Indian snacks. Our recipes have been passed down through generations, ensuring that each product contains the same delicious taste that our grandparents enjoyed.</p>
+                    <p>We use only the finest, natural ingredients and traditional preparation methods to create snacks that are rich in flavor and free from artificial preservatives. Each batch is carefully crafted to deliver the perfect balance of spices and textures.</p>
+                    <p>Our commitment to quality and authenticity has made us a trusted name in homemade snacks, with customers returning again and again for our distinctive flavors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-text">The Bellam Gavvalu from SHRI GUNA FOODS takes me back to my childhood. The perfect balance of sweetness and crunch is simply unmatched!</p>
+                    <p class="testimonial-author">- Priya S., Hyderabad</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">I've tried many snack brands, but the authenticity of SHRI GUNA FOODS is remarkable. The Murukulu is my family's favorite!</p>
+                    <p class="testimonial-author">- Ramesh K., Bangalore</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-text">The quality and taste of their products are exceptional. The Dry Fruit Laddu is not just delicious but also healthy. Highly recommended!</p>
+                    <p class="testimonial-author">- Anjali M., Chennai</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+            <div class="cart-total">
+                Total: ₹<span id="cartTotal">0</span>
+            </div>
+            <button class="buy-now-btn" id="buyNow">
+                <i class="fab fa-whatsapp"></i> Order Now on WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        Item added to cart!
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">SHRI GUNA FOODS</div>
+                <p>Authentic Homemade Foods Made With Traditional Recipes</p>
+                <p>Contact: +91 95051 35494 | Email: orders@shrigunafoods.com</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 SHRI GUNA FOODS. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            const loading = document.getElementById('loading');
+            setTimeout(() => {
+                loading.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Testimonial slider
+        const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            testimonialSlides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + testimonialSlides.length) % testimonialSlides.length;
+            testimonialSlides[currentSlide].classList.add('active');
+        }
+
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
+
+        // Cart functionality
+        const cartIcon = document.getElementById('cartIcon');
+        const cartModal = document.getElementById('cartModal');
+        const closeCart = document.getElementById('closeCart');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        const cartCount = document.querySelector('.cart-count');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const buyNowBtn = document.getElementById('buyNow');
+        const notification = document.getElementById('notification');
+
+        let cart = [];
+
+        // Open cart modal
+        cartIcon.addEventListener('click', () => {
+            cartModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close cart modal
+        closeCart.addEventListener('click', () => {
+            cartModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === cartModal) {
+                cartModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Add to cart functionality
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = parseInt(button.getAttribute('data-price'));
+                const img = button.getAttribute('data-img');
+
+                // Check if item already in cart
+                const existingItem = cart.find(item => item.id === id);
+
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        img,
+                        quantity: 1
+                    });
+                }
+
+                updateCart();
+                showNotification(name);
+                
+                // Add animation to cart icon
+                cartIcon.style.transform = 'scale(1.2)';
+                setTimeout(() => {
+                    cartIcon.style.transform = 'scale(1)';
+                }, 300);
+            });
+        });
+
+        // Update cart display
+        function updateCart() {
+            cartItems.innerHTML = '';
+            let total = 0;
+            let count = 0;
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p style="text-align: center; padding: 20px;">Your cart is empty</p>';
+            } else {
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    count += item.quantity;
+
+                    const cartItemElement = document.createElement('div');
+                    cartItemElement.classList.add('cart-item');
+                    cartItemElement.innerHTML = `
+                        <div class="item-details">
+                            <img src="${item.img}" alt="${item.name}" class="item-img">
+                            <div>
+                                <div class="item-name">${item.name}</div>
+                                <div class="item-price">₹${item.price}</div>
+                                <div class="item-quantity">
+                                    <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                                    <span>${item.quantity}</span>
+                                    <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-total">₹${itemTotal}</div>
+                        <button class="remove-item" data-id="${item.id}">&times;</button>
+                    `;
+
+                    cartItems.appendChild(cartItemElement);
+                });
+            }
+
+            cartTotal.textContent = total;
+            cartCount.textContent = count;
+
+            // Add event listeners to quantity buttons
+            document.querySelectorAll('.increase').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    const item = cart.find(item => item.id === id);
+                    item.quantity += 1;
+                    updateCart();
+                });
+            });
+
+            document.querySelectorAll('.decrease').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    const item = cart.find(item => item.id === id);
+                    if (item.quantity > 1) {
+                        item.quantity -= 1;
+                    } else {
+                        cart = cart.filter(item => item.id !== id);
+                    }
+                    updateCart();
+                });
+            });
+
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', () => {
+                    const id = button.getAttribute('data-id');
+                    cart = cart.filter(item => item.id !== id);
+                    updateCart();
+                });
+            });
+        }
+
+        // Show notification
+        function showNotification(productName) {
+            notification.textContent = `${productName} added to cart!`;
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Buy Now functionality - redirect to WhatsApp with order details
+        buyNowBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+
+            let message = "Hello, I would like to place an order from SHRI GUNA FOODS:%0A%0A";
+            
+            cart.forEach(item => {
+                message += `- ${item.name} (Qty: ${item.quantity}) - ₹${item.price * item.quantity}%0A`;
+            });
+            
+            message += `%0ATotal: ₹${cartTotal.textContent}%0A%0APlease confirm my order.`;
+            
+            const phoneNumber = "+919505135494";
+            const url = `https://wa.me/${phoneNumber}?text=${message}`;
+            
+            // Open WhatsApp in a new tab
+            window.open(url, '_blank');
+            
+            // Optionally close the cart modal
+            cartModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize with empty cart
+        updateCart();
+    </script>
+<!-- Floating Feedback Button -->
+<div id="feedback-widget">
+  <!-- Feedback Button -->
+  <button id="feedback-btn" class="feedback-btn">
+    <span>💬</span>
+    Feedback
+  </button>
+  
+  <!-- Feedback Modal -->
+  <div id="feedback-modal" class="feedback-modal">
+    <div class="feedback-content">
+      <div class="feedback-header">
+        <h3>Share Your Feedback</h3>
+        <span class="close-btn">&times;</span>
+      </div>
+      <form id="feedback-form" action="https://formspree.io/f/xnnrdale" method="POST">
+        <div class="form-group">
+          <label for="user-name">Your Name (Optional)</label>
+          <input type="text" id="user-name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="user-email">Your Email (Optional)</label>
+          <input type="email" id="user-email" name="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="message">Your Feedback *</label>
+          <textarea id="message" name="message" placeholder="Please share your suggestions, issues, or compliments..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Feedback</button>
+        
+        <!-- Success Message -->
+        <div id="success-message" class="success-message" style="display: none;">
+          Thank you for your feedback! We'll review it shortly.
+        </div>
+        
+        <!-- Error Message -->
+        <div id="error-message" class="error-message" style="display: none;">
+          Sorry, there was an error sending your feedback. Please try again.
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Feedback Button Styles */
+.feedback-btn {
+  position: fixed;
+  bottom: 2px;
+  right: 20px;
+  background: #843101; /* Green color matching food/health theme */
+  color: rgb(255, 249, 249);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.feedback-btn:hover {
+  background: #19103c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+/* Modal Styles */
+.feedback-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 1001;
+  animation: fadeIn 0.3s ease;
+}
+
+.feedback-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 0;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.feedback-header {
+  background: #2e7d32;
+  color: white;
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feedback-header h3 {
+  margin: 0;
+  font-size: 1.3em;
+}
+
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+}
+
+.close-btn:hover {
+  color: #ffeb3b;
+}
+
+/* Form Styles */
+#feedback-form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2e7d32;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #1b5e20;
+}
+
+.submit-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Message Styles */
+.success-message {
+  color: #2e7d32;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  background: #e8f5e9;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: 1px solid #a5d6a7;
+}
+
+.error-message {
+  color: #d32f2f;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  background: #ffebee;
+  border-radius: 5px;
+  margin-top: 15px;
+  border: 1px solid #ef9a9a;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to { 
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .feedback-content {
+    width: 95%;
+    margin: 10px;
+  }
+  
+  .feedback-btn {
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const feedbackBtn = document.getElementById('feedback-btn');
+  const feedbackModal = document.getElementById('feedback-modal');
+  const closeBtn = document.querySelector('.close-btn');
+  const feedbackForm = document.getElementById('feedback-form');
+  const successMessage = document.getElementById('success-message');
+  const errorMessage = document.getElementById('error-message');
+  
+  // Open modal
+  feedbackBtn.addEventListener('click', function() {
+    feedbackModal.style.display = 'block';
+    document.querySelector('.feedback-content').style.animation = 'slideIn 0.3s ease';
+    // Reset messages
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+  });
+  
+  // Close modal
+  closeBtn.addEventListener('click', closeModal);
+  
+  // Close modal when clicking outside
+  feedbackModal.addEventListener('click', function(e) {
+    if (e.target === feedbackModal) {
+      closeModal();
+    }
+  });
+  
+  // Handle form submission
+  feedbackForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const message = document.getElementById('message').value;
+    
+    if (!message.trim()) {
+      alert('Please enter your feedback message');
+      return;
+    }
+    
+    const submitBtn = feedbackForm.querySelector('.submit-btn');
+    const originalText = submitBtn.textContent;
+    
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    // Hide previous messages
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+    
+    try {
+      // Send data to Formspree
+      const formData = new FormData(feedbackForm);
+      
+      const response = await fetch(feedbackForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        // Show success message
+        successMessage.style.display = 'block';
+        feedbackForm.reset();
+        
+        // Close modal after 2 seconds
+        setTimeout(() => {
+          closeModal();
+        }, 2000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      // Show error message
+      errorMessage.style.display = 'block';
+      console.error('Error submitting feedback:', error);
+    } finally {
+      // Re-enable button
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }
+  });
+  
+  function closeModal() {
+    feedbackModal.style.display = 'none';
+    // Reset form when closing
+    setTimeout(() => {
+      feedbackForm.reset();
+      successMessage.style.display = 'none';
+      errorMessage.style.display = 'none';
+    }, 300);
+  }
+  
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && feedbackModal.style.display === 'block') {
+      closeModal();
+    }
+  });
+});
+</script>
+</body>
+</html>
