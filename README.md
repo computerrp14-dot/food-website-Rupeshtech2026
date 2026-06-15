@@ -1,3 +1,4 @@
+shrigunafoods1.netlify.app
 # food-website-Rupeshtech2026
 a homemade traditional Indian snacks business.
 
